@@ -1,0 +1,224 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --padding: 2rem;
+    --radius: 10px;
+}
+
+button{
+    font-family: "League Spartan", sans-serif;
+}
+
+
+.theme1{
+    --mainBack:hsl(222, 26%, 31%);
+    --toggleBack: hsl(223, 31%, 20%);
+    --screenBack:  hsl(224, 36%, 15%);
+
+    --keyFirstBack: hsl(30, 25%, 89%);
+    --keyFirstShadow:  hsl(28, 16%, 65%);
+
+    --keySecondBack: hsl(225, 21%, 49%);
+    --keySecondShadow: hsl(224, 28%, 35%);
+
+    --keyResult: hsl(6, 63%, 50%);
+    --keyResultShadow: hsl(6, 70%, 34%);
+
+    --textFrist: hsl(221, 14%, 31%);
+    --textSecond: hsl(0, 0%, 100%);
+    --textResult:  hsl(0, 0%, 100%);
+
+    --white: hsl(0, 0%, 100%);
+}
+
+
+.theme2{
+    --mainBack:hsl(0, 0%, 90%);
+    --toggleBack: hsl(0, 5%, 81%);
+    --screenBack:  hsl(0, 0%, 96%);
+
+    --keyFirstBack: hsl(45, 7%, 89%);
+    --keyFirstShadow:  hsl(35, 11%, 61%);
+
+    --keySecondBack: hsl(185, 42%, 37%);
+    --keySecondShadow: hsl(185, 58%, 25%);
+
+    --keyResult: hsl(25, 98%, 40%);
+    --keyResultShadow: hsl(25, 99%, 27%);
+
+    --textFrist: hsl(221, 14%, 31%);
+    --textSecond: hsl(60, 10%, 19%);
+    --textResult:  hsl(0, 0%, 100%);
+
+    --white: hsl(0, 0%, 100%);
+}
+
+.theme3{
+    --mainBack:hsl(268, 75%, 9%);
+    --toggleBack: hsl(268, 71%, 12%);
+    --screenBack:  hsl(268, 71%, 12%);
+
+    --keyFirstBack: hsl(268, 47%, 21%);
+    --keyFirstShadow:  hsl(290, 70%, 36%);
+
+    --keySecondBack: hsl(281, 89%, 26%);
+    --keySecondShadow: hsl(285, 91%, 52%);
+
+    --keyResult: hsl(176, 100%, 44%);
+    --keyResultShadow: hsl(177, 92%, 70%);
+
+    --textFrist: hsl(52, 100%, 62%);
+    --textSecond: hsl(52, 100%, 62%);
+    --textResult:  hsl(198, 20%, 13%);
+
+    --white: hsl(0, 0%, 100%);
+}
+
+
+
+body{
+    padding: var(--padding);
+    font-family: "League Spartan", sans-serif;
+    font-weight: 700;
+    background-color: var(--mainBack);
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    user-select: none; 
+
+}
+.containCalculator{
+    margin-top: 5rem;
+    width: 100%;
+    max-width: 600px;
+    min-width: 500px;
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: calc(var(--padding) * 1.5);
+    color: var(--textSecond);
+}
+.top p{
+    font-size: 3rem;
+}
+.changeTheme{
+    display: flex;
+    align-items: flex-end;
+}
+.changeTheme > span {
+    padding-right: var(--padding);
+    padding-bottom: .25rem;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+.optionTheme > span{
+    width: 1.8rem;
+    display: inline-block;
+    text-align: center;
+    padding-bottom: .25rem;
+}
+.buttonOption{
+    cursor: pointer;
+    background-color: var(--toggleBack);
+    width: 100%;
+    height: 2rem;
+    border-radius: 50px;
+    position: relative;   
+}
+.buttonOption span{
+    position: absolute;
+    top: .25rem;
+    content: "";
+    background-color: var(--keyResult);
+    width: 1.5rem;
+    height: 1.5rem; 
+    border-radius: 50px;
+    transition: all .2s;
+}
+
+.option1{ left: .3rem; }
+.option2{ left: calc((1.5rem / 2) + 1.5rem); }
+.option3{ left: calc((1.5rem * 3) - .3rem); }
+
+
+
+
+
+
+.screeResult{
+    text-align: right;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--textSecond);
+    width: 100%;
+    height: 6.5rem;
+    border: none;
+    border-radius: var(--radius);
+    background-color: var(--screenBack);
+    margin-bottom: var(--padding);
+    padding: var(--padding);
+    overflow: hidden;
+}
+.screeResult p{
+    line-height: 1;
+}
+.screeResult span{
+    display: none;
+}
+
+
+
+.containerButtons{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 1.25rem;
+    background-color: var(--toggleBack);
+    padding: var(--padding);
+    border-radius: var(--radius);
+}
+.btn{
+    background-color: var(--keyFirstBack);
+    border-radius: var(--radius);
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1.2rem 0;
+    color: var(--textFrist);
+    border: none;
+    box-shadow: 0px 5px 0px 0px var(--keyFirstShadow);
+    transition: all .11s ;
+    cursor: pointer;
+}
+button.btn_active{
+    box-shadow: 0px 0px 0px 0px var(--keyFirstShadow);
+    transform: translateY(5px);
+}
+
+.containerButtons .btn_large{
+    grid-column: span 2;
+}
+.btn_opt{
+    background-color: var(--keySecondBack);
+    box-shadow: 0px 5px 0px 0px var(--keySecondShadow);
+    color: var(--white);
+    font-size: 1.5rem;
+}
+.btn:active{
+    box-shadow: 0px 0px 0px 0px var(--keySecondShadow);
+}
+.btn_result{
+    color: var(--textResult);
+    background-color: var(--keyResult);
+    box-shadow: 0px 5px 0px 0px var(--keyResultShadow);
+}
+.btn_result:active{
+    box-shadow: 0px 0px 0px 0px var(--keySecondShadow);
+}
