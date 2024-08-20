@@ -36,7 +36,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: (https://github.com/MaxxRz/calculator-app)
-- Live Site URL: (https://maxxrz.github.io/calulator-app/)
+- Live Site URL: (https://maxxrz.github.io/calculator-app/)
 
 
 
